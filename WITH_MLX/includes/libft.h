@@ -6,7 +6,7 @@
 /*   By: eaubert <eaubert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:19:48 by eaubert           #+#    #+#             */
-/*   Updated: 2021/09/06 16:55:46 by eaubert          ###   ########.fr       */
+/*   Updated: 2021/05/27 16:53:34 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char				*ft_strdup(const char *s1);
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
-int					ft_strlen(const char *s);
+int				ft_strlen(const char *s);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *haystack, \
@@ -56,15 +56,15 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_atoi(const char *str);
-double				ft_atof(const char *str);
+double					ft_atof(const char *str);
 
-typedef struct s_list
+typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
-}	t_list;
+}					t_list;
 
-typedef struct s_next
+typedef struct		s_next
 {
 	struct s_next	*next;
 }		t_next;

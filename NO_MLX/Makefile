@@ -6,11 +6,11 @@
 #    By: eaubert <eaubert@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/08 17:11:01 by eaubert           #+#    #+#              #
-#    Updated: 2021/09/08 11:35:45 by user42           ###   ########.fr        #
+#    Updated: 2021/09/09 10:47:30 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= /*CHANGE*/
+NAME 	= CHANGE
 
 INCLU	= -I./includes
 
@@ -20,12 +20,14 @@ CC 		= clang
 
 CFLAGS 	= -Wall -Wextra -Werror
 
-/*CHANGE*/	= main.c 
+DEBUG	= -g3 -fsanitize=address 
+
+CHANGE	= main.c 
 
 FILE_DISPLAY = \
 
 
-SRCS	=  $(/*CHANGE*/) $(addprefix $(FILE_PATH_DISPLAY)/, $(FILE_DISPLAY))
+SRCS	=  $(CHANGE) $(addprefix $(FILE_PATH_DISPLAY)/, $(FILE_DISPLAY))
 
 OBJS 	= ${SRCS:.c=.o}
 
@@ -40,7 +42,7 @@ all: 		${NAME}
 $(NAME):	${OBJS}
 		cp  includes/libft.h libft/
 		make -C libft/ bonus
-		$(CC) $(CFLAGS) ${OBJS} -g3 -fsanitize=address -o $(NAME) libft/libft.a
+		$(CC) $(CFLAGS) ${OBJS} ${DEBUG} -o $(NAME) libft/libft.a
 
 clean:
 			${RM} ${OBJS}

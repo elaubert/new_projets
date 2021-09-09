@@ -6,13 +6,13 @@
 #    By: eaubert <eaubert@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/08 17:11:01 by eaubert           #+#    #+#              #
-#    Updated: 2021/09/07 15:42:33 by user42           ###   ########.fr        #
+#    Updated: 2021/09/09 10:41:37 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= so_long
+NAME 	= CHANGE
 
-INCLU	= -I./includes
+INCLU	= -I./includes -I./mlx_linux
 
 FILE_PATH_DISPLAY	= ./srcs
 
@@ -20,31 +20,31 @@ CC 		= clang
 
 CFLAGS 	= -Wall -Wextra -Werror
 
-FRACTOL	= main.c 
+DEBUG 	= -g3 -fsanitize=address
 
-FILE_DISPLAY = get_next_line.c hook.c mlx.c map_parsing.c init_struct.c \
-			   color.c mlx_textures.c
+MLX 	= -Lmlx_linux -lmlx_linux -lXext -lX11 -lm 
 
+CHANGE	= main.c 
 
-SRCS	=  $(FRACTOL) $(addprefix $(FILE_PATH_DISPLAY)/, $(FILE_DISPLAY))
+FILE_DISPLAY = hook.c mlx.c \
+
+SRCS	=  $(CHANGE) $(addprefix $(FILE_PATH_DISPLAY)/, $(FILE_DISPLAY))
 
 OBJS 	= ${SRCS:.c=.o}
 
 RM	= rm -f
 
-MLX = 'mlx_linux */'
-
 all: 		${NAME}
 
 %.o : %.c
 	
-	  $(CC) $(CFLAGS) -g $(INCLU) $(INCLU_LIBFT) -c $< -o $@
+	  $(CC) $(CFLAGS) $(INCLU) -c $< -o $@
 
 $(NAME):	${OBJS}
 		cp  includes/libft.h libft/
 		make -C libft/ bonus
 		make -C mlx_linux/
-		$(CC) $(CFLAGS) ${OBJS} -g -Lmlx_linux -lmlx_linux -L/usr/lib -lXext -lX11 -lm -o $(NAME) libft/libft.a
+		$(CC) $(CFLAGS) ${OBJS} $(MLX) -o $(NAME) libft/libft.a
 
 clean:
 			${RM} ${OBJS}
