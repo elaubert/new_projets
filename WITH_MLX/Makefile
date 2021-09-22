@@ -6,7 +6,7 @@
 #    By: eaubert <eaubert@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/08 17:11:01 by eaubert           #+#    #+#              #
-#    Updated: 2021/09/09 10:41:37 by user42           ###   ########.fr        #
+#    Updated: 2021/09/22 12:16:47 by eaubert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ MLX 	= -Lmlx_linux -lmlx_linux -lXext -lX11 -lm
 
 CHANGE	= main.c 
 
-FILE_DISPLAY = hook.c mlx.c \
+FILE_DISPLAY = hook.c mlx.c color.c \
 
 SRCS	=  $(CHANGE) $(addprefix $(FILE_PATH_DISPLAY)/, $(FILE_DISPLAY))
 

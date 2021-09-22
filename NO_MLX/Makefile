@@ -6,7 +6,7 @@
 #    By: eaubert <eaubert@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/08 17:11:01 by eaubert           #+#    #+#              #
-#    Updated: 2021/09/09 10:47:30 by user42           ###   ########.fr        #
+#    Updated: 2021/09/22 12:14:23 by eaubert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 	= CHANGE
 
 INCLU	= -I./includes
 
-FILE_PATH_DISPLAY	= ./srcs
+FILE_PATH_SRCS	= ./srcs
 
 CC 		= clang
 
@@ -24,10 +24,10 @@ DEBUG	= -g3 -fsanitize=address
 
 CHANGE	= main.c 
 
-FILE_DISPLAY = \
+FILE_SRCS = color.c \
 
 
-SRCS	=  $(CHANGE) $(addprefix $(FILE_PATH_DISPLAY)/, $(FILE_DISPLAY))
+SRCS	=  $(CHANGE) $(addprefix $(FILE_PATH_SRCS)/, $(FILE_SRCS))
 
 OBJS 	= ${SRCS:.c=.o}
 

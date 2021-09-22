@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 11:08:52 by user42            #+#    #+#             */
-/*   Updated: 2021/09/07 16:57:26 by eaubert          ###   ########.fr       */
+/*   Updated: 2021/09/22 12:14:55 by eaubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	green(void)
 {
-	printf("\033[1;32m");
+	printf("\033[1;32m"); // VERIFIER SI AUTO PRINTF
 }
 
 void	reset(void)
 {
-	printf("\033[0m");
+	printf("\033[0m"); // SAME ??
 }

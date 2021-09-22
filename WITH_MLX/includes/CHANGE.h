@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   CHANGE.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 15:17:53 by user42            #+#    #+#             */
-/*   Updated: 2021/09/09 10:40:19 by user42           ###   ########.fr       */
+/*   Updated: 2021/09/22 12:18:33 by eaubert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct	s_render
 }		t_render;
 
 t_render    *init_frame(void); // mlx
+void		green(void);
+void		reset(void);
 void    	mlx_render_loop(char **argv, t_render *frame); // mlx
 void		my_mlx_init(t_render *frame); // mlx
 void    	mlx_error(t_render *frame); //mlx
