@@ -6,7 +6,7 @@
 #    By: eaubert <eaubert@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/08 17:11:01 by eaubert           #+#    #+#              #
-#    Updated: 2021/09/22 12:16:47 by eaubert          ###   ########.fr        #
+#    Updated: 2021/09/30 12:00:51 by eaubert          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,13 @@ CC 		= clang
 
 CFLAGS 	= -Wall -Wextra -Werror
 
-DEBUG 	= -g3 -fsanitize=address
-
 MLX 	= -Lmlx_linux -lmlx_linux -lXext -lX11 -lm 
 
-CHANGE	= main.c 
+MAIN	= main.c 
 
 FILE_DISPLAY = hook.c mlx.c color.c \
 
-SRCS	=  $(CHANGE) $(addprefix $(FILE_PATH_DISPLAY)/, $(FILE_DISPLAY))
+SRCS	=  $(MAIN) $(addprefix $(FILE_PATH_DISPLAY)/, $(FILE_DISPLAY))
 
 OBJS 	= ${SRCS:.c=.o}
 
